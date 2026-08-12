@@ -11,15 +11,15 @@ public:
     bool hasCycle(ListNode *head) {
         #define node ListNode
         unordered_map <ListNode* , int> mpp;
-        ListNode* h = head;
-        while(!mpp.contains(h)){
-            if(h == NULL) return false;
-
-            mpp[h]++;
-            h = h->next;
+        node* s = head;
+        node* f = head;
+        while(f!=NULL && f->next != NULL){
+            s = s->next;
+            f = f->next->next;
+            if(s == f) return true;
 
         }
-        return true;
+        return false;
 
     }
 };
