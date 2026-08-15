@@ -13,15 +13,12 @@ public:
 
         node* a = headA;
         node* b = headB;
-        unordered_map<node* , int> mpp;
-        while(a!=NULL){
-            mpp[a]++;
-            a=a->next;
-            
+    
+        while(a!=b){
+            a = (a==NULL)? headB : a->next;
+            b = (b==NULL)? headA : b->next;
         }
-        while(!mpp.contains(b) && b!=NULL){
-            b=b->next;
-        }
+        
         return b;
 
     }
