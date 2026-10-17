@@ -11,15 +11,15 @@ public:
                 return nums[mid];
 
             }
-            if(mid!=nums.size()-1 && mid!=0 && nums[mid]==nums[mid+1]){
-                if(mid!=nums.size()-1 && mid!=0 &&(high-mid-1)%2==0){
+            if(nums[mid]==nums[mid+1]){
+                if((high-mid-1)%2==0){
                     high = mid -1;
                 }else{
                     low = mid+2;
                 }
             }
-            else if(mid!=nums.size()-1 && mid!=0 && nums[mid]!=nums[mid+1]){
-                if(mid!=nums.size()-1 && mid!=0 && (high - mid)%2==0){
+            else if(nums[mid]!=nums[mid+1]){
+                if((high - mid)%2==0){
                     high = mid;
                 }else{
                     low = mid+1;
