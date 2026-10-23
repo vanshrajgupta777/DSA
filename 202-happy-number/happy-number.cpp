@@ -9,11 +9,16 @@ public:
         return ans;
     }
     bool isHappy(int n) {
-        while(true){
+            int slow = n;
+            int fast = n;
+
             n = f(n);
-            if(n == 1) return true;
-            if(n<10 && n!=7) return false;
-        }
-        return true;
+            do{
+                slow = f(slow);
+                fast = f(f(fast));
+            }while(slow!=fast);
+        return slow==1;
+        
+        
     }
 };
